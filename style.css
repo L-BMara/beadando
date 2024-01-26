@@ -19,10 +19,19 @@
     --v_menu_font_size: 54px;
     --v_menu_gap : 15px;
     --v_felx_direction: normal;
+    --v_menuline_padding: 0px 32px;
+    --v_menuline_justify_cont: space-between;
+    --v_menu_line_font_size: 40px;
+    --v_menu_line_nav_font: 24px;
+    --v_font_weight: 100px;
+    --v_h1_font_weight: 100px;
+    --v_border_bottom: 1px solid black;
+    --v_menuline_nav_justify_cont: center;
 
     /*dark mode*/
     --v_dark_color: white;
     --v_dark_background: black;
+    --v_dak_border_bottom: 1px solid white;
 
     /*mobil setting*/
     --v_mobile_h_font: 48px;
@@ -54,7 +63,7 @@ h1{
     font-family: var(--v_font_family);
     font-size: var(--v_h1_font_size);
     letter-spacing: var(--v_h1_letter_sp);
-    font-weight: 900; 
+    font-weight: var(--v_h1_font_weight); 
     
 }
 
@@ -70,12 +79,44 @@ h1{
     flex-direction: var(--v_menu_direction);
     align-items: var(--v_menu_align_itm);
     gap: var(--v_menu_gap);
+    font-weight: var(--v_font_weight); 
 }
 
 .menu a {
     color: var(--v_color);
     font-family: var(--v_font_family);
     font-size: var(--v_menu_font_size);
+    text-decoration: none;
+    font-style: normal; 
+}
+
+.menu_line{
+    display: var(--v_menu_dis);
+    padding: var(--v_menuline_padding);
+    justify-content: var(--v_menuline_justify_cont);
+    align-items: var(--v_align_itm);
+    flex-shrink: var(--v_flex_shrink); 
+    font-weight: var(--v_font_weight); 
+    border-bottom: var(--v_border_bottom);
+}
+
+.menu_line p{
+    font-family: var(--v_font_family);
+    font-size: var(--v_menu_line_font_size);
+    color: var(--v_color);
+}
+
+.menu_line nav{
+    gap: var(--v_menu_gap);
+    display: var(--v_menu_dis);
+    justify-content: var(--v_menuline_nav_justify_cont);
+}
+
+
+.menu_line nav a{
+    color: var(--v_color);
+    font-family: var(--v_font_family);
+    font-size: var(--v_menu_line_nav_font);
     text-decoration: none;
     font-style: normal; 
 }
@@ -89,6 +130,10 @@ h1{
 
     .line{
         --v_color: var(--v_dark_color);
+    }
+
+    .menu_line{
+        --v_border_bottom: var(--v_dak_border_bottom);
     }
 }
 
