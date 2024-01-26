@@ -1,0 +1,62 @@
+/*create variables*/
+:root{
+    --v_background: white;
+    --v_font_family: 'Roboto', sans-serif;
+    --v_h1_font_size: 64px;
+    --v_color: black;
+    --v_menu_dis: flex;
+    --v_menu_direction: column;
+    --v_menu_align_itm: flex-start;
+    --v_h1_letter_sp: 15px;
+    --v_align_itm: center;
+    --v_gap: 50px;
+    --v_flex_shrink: 0;
+    --v_cent_padding: 412px 269px 393px 269px;
+    --v_justify_cont: center;
+    --v_line_with: 1px;
+    --v_line_height: 219px;
+    --v_line_color: black;
+    --v_menu_font_size: 54px;
+    --v_menu_gap : 15px;
+}
+
+.def_div_class {
+    background-color: var(--v_background);
+    display: var(--v_menu_dis);
+    align-items: var(--v_align_itm); 
+    gap: var(--v_gap);
+    flex-shrink: var(--v_flex_shrink);
+    padding: var(--v_cent_padding);
+    justify-content: var(--v_justify_cont);
+}
+
+h1{
+    font-family: var(--v_font_family);
+    font-size: var(--v_h1_font_size);
+    color: var(--v_color);
+    letter-spacing: var(--v_h1_letter_sp);
+    font-weight: 900; 
+    
+}
+
+.line{
+    width: var(--v_line_with);
+    height: var(--v_line_height); 
+    background: var(--v_line_color);
+}
+
+.menu{
+    display: var(--v_menu_dis);
+    flex-direction: var(--v_menu_direction);
+    align-items: var(--v_menu_align_itm);
+    gap: var(--v_menu_gap);
+}
+
+.menu a {
+    color: var(--v_color);
+    font-family: var(--v_font_family);
+    font-size: var(--v_menu_font_size);
+    text-decoration: none;
+    font-style: normal; 
+}
+
