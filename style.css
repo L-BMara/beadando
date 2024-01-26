@@ -1,5 +1,6 @@
 /*create variables*/
 :root{
+    /*alap*/
     --v_background: white;
     --v_font_family: 'Roboto', sans-serif;
     --v_h1_font_size: 64px;
@@ -15,25 +16,43 @@
     --v_justify_cont: center;
     --v_line_with: 1px;
     --v_line_height: 219px;
-    --v_line_color: black;
     --v_menu_font_size: 54px;
     --v_menu_gap : 15px;
+    --v_felx_direction: normal;
+
+    /*dark mode*/
+    --v_dark_color: white;
+    --v_dark_background: black;
+
+    /*mobil setting*/
+    --v_mobile_h_font: 48px;
+    --v_mobile_h_letter_sp: 10px;
+    --v_mobile_cent_padding: 153px 0px;
+    --v_mobile_felx_direction: column;
+    --v_mobile_line_with: 376px;
+    --v_mobile_line_height: 1px;
+    --v_mobile_menu_gap: 32px;
+    --v_mobile_menu_align_itm: center;
+}
+
+body{
+    background-color: var(--v_background);
+    color: var(--v_color);
 }
 
 .def_div_class {
-    background-color: var(--v_background);
     display: var(--v_menu_dis);
     align-items: var(--v_align_itm); 
     gap: var(--v_gap);
     flex-shrink: var(--v_flex_shrink);
     padding: var(--v_cent_padding);
     justify-content: var(--v_justify_cont);
+    flex-direction: var(--v_felx_direction);
 }
 
 h1{
     font-family: var(--v_font_family);
     font-size: var(--v_h1_font_size);
-    color: var(--v_color);
     letter-spacing: var(--v_h1_letter_sp);
     font-weight: 900; 
     
@@ -42,7 +61,8 @@ h1{
 .line{
     width: var(--v_line_with);
     height: var(--v_line_height); 
-    background: var(--v_line_color);
+    background: var(--v_color);
+
 }
 
 .menu{
@@ -60,3 +80,41 @@ h1{
     font-style: normal; 
 }
 
+@media (prefers-color-scheme: dark) {
+    body{
+        --v_background: var(--v_dark_background);
+        --v_color: var(--v_dark_color);
+        background: linear-gradient(117deg, #121215 0%, #262629 100%);
+    }
+
+    .line{
+        --v_color: var(--v_dark_color);
+    }
+}
+
+
+@media screen and (max-width: 820px) and (min-width: 300px) {
+    
+
+    .def_div_class{
+        --v_cent_padding: var(--v_mobile_cent_padding);
+        --v_felx_direction: var(--v_mobile_felx_direction);
+    }
+
+    h1{
+        --v_h1_font_size: var(--v_mobile_h_font);
+        --v_h1_letter_sp: var(--v_mobile_h_letter_sp);
+    }
+
+    .line{
+        --v_line_with: var(--v_mobile_line_with);
+        --v_line_height: var(--v_mobile_line_height);
+    }
+
+    .menu{
+        --v_menu_font_size: var(--v_mobile_h_font);
+        --v_menu_gap: var(--v_mobile_menu_gap);
+        --v_menu_align_itm: var(--v_mobile_menu_align_itm)
+    }
+
+}
