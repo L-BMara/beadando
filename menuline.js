@@ -40,6 +40,7 @@ function create_menu_line (){
     let v_szolg_a = document.createElement('a');
     let v_kapcs_a = document.createElement('a');
     let v_searh_res = find_actual_url();
+    let v_is_mobile = window.matchMedia('(max-width: 820px) and (min-width: 300px)').matches;
 
     v_menu_div.id = "menu_line"
     v_html.appendChild(v_menu_div);
@@ -60,6 +61,10 @@ function create_menu_line (){
         set_dark_light("body");
     });
 
+    window.addEventListener('resize', function(event) {
+       window.location.reload();
+    });
+
     v_nav.append(v_ceg_a, v_szolg_a, v_kapcs_a);
 
     v_ceg_a.setAttribute('href', "ceginformacio.html");
@@ -74,8 +79,10 @@ function create_menu_line (){
     v_kapcs_a.textContent = "Kapcsolat";
     v_kapcs_a.id="connect_nav";
 
+    console.log(v_is_mobile);
+
     /*kiemeli azt ahol épp állunk*/
-    if(v_searh_res.search("Céginformáció")===0)
+    if(v_searh_res.search("Céginformáció")===0 && !v_is_mobile)
     {
         document.getElementById("compinfo_nav").style.fontWeight = "700"; 
     }
