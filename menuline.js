@@ -62,7 +62,13 @@ function create_menu_line (){
     });
 
     window.addEventListener('resize', function(event) {
-       window.location.reload();
+        let v_width = window.innerWidth;
+        if (v_width < 820){
+            v_is_mobile = false;
+        }
+        else {
+            v_is_mobile = false;
+        }
     });
 
     v_nav.append(v_ceg_a, v_szolg_a, v_kapcs_a);
