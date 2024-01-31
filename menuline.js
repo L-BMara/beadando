@@ -1,5 +1,5 @@
 /*aktuális oldal url-jét kiszedjük, ez alapján visszatérünk egy szövegkiemeléssel arra a linkre ahol épp vagyunk*/
-function find_actual_url(){
+function findActualUrl(){
 
     let v_url = window.location.href; 
 
@@ -20,7 +20,7 @@ function find_actual_url(){
     return r_html
 }
 
-function set_dark_light (p_element)
+function setDarkLight (p_element)
 {
     /*node ellenőrzés. Sajnos valamiért nem veszi fel a background colort css-ből csak js-ből sytle-al hívva :/ */
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -31,15 +31,16 @@ function set_dark_light (p_element)
     }   
 }
 
-function create_menu_line (){
+function createMenuLine (){
     let v_html = document.querySelector("body");
     let v_menu_div = document.createElement("DIV");
     let v_paragraph = document.createElement("p");
     let v_nav = document.createElement("NAV");
-    let v_ceg_a = document.createElement('a');
-    let v_szolg_a = document.createElement('a');
-    let v_kapcs_a = document.createElement('a');
-    let v_searh_res = find_actual_url();
+    let v_comp_a = document.createElement('a');
+    let v_serv_a = document.createElement('a');
+    let v_conn_a = document.createElement('a');
+    let v_home_a = document.createElement('a');
+    let v_searh_res = findActualUrl();
     let v_is_mobile = window.matchMedia('(max-width: 820px) and (min-width: 300px)').matches;
 
     v_menu_div.id = "menu_line"
@@ -47,18 +48,21 @@ function create_menu_line (){
     document.getElementById('menu_line').classList.add("menu_line");
 
     v_paragraph.id = "company"
-    v_menu_div.appendChild(v_paragraph);
+    v_menu_div.append(v_paragraph, v_nav);
     
     v_paragraph.textContent = "ACME Inc."
-
+    v_paragraph.appendChild(v_home_a)
+    
     v_nav.id = "navig_id";
-    v_menu_div.appendChild(v_nav);
-    document.getElementById('navig_id').classList.add("menuline_navig");
 
-    set_dark_light("body");
+    v_home_a.setAttribute('href', "index.html");
+    v_home_a.id="home";
+    document.getElementById("home").innerHTML = '<i class="fa fa-home"></i>';
+
+    setDarkLight("body");
     /*váltás miatt event listener így élőben csinálja :)*/
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        set_dark_light("body");
+        setDarkLight("body");
     });
 
     window.addEventListener('resize', function(event) {
@@ -71,19 +75,19 @@ function create_menu_line (){
         }
     });
 
-    v_nav.append(v_ceg_a, v_szolg_a, v_kapcs_a);
+    v_nav.append(v_comp_a, v_serv_a, v_conn_a);
 
-    v_ceg_a.setAttribute('href', "ceginformacio.html");
-    v_ceg_a.textContent = "Céginformáció"
-    v_ceg_a.id="compinfo_nav";
+    v_comp_a.setAttribute('href', "ceginformacio.html");
+    v_comp_a.textContent = "Céginformáció"
+    v_comp_a.id="compinfo_nav";
 
-    v_szolg_a.setAttribute('href', "szolgaltatasok.html");
-    v_szolg_a.textContent = "Szolgáltatásaink"
-    v_szolg_a.id="support_nav";
+    v_serv_a.setAttribute('href', "szolgaltatasok.html");
+    v_serv_a.textContent = "Szolgáltatásaink"
+    v_serv_a.id="support_nav";
 
-    v_kapcs_a.setAttribute('href', "kapcsolat.html");
-    v_kapcs_a.textContent = "Kapcsolat";
-    v_kapcs_a.id="connect_nav";
+    v_conn_a.setAttribute('href', "kapcsolat.html");
+    v_conn_a.textContent = "Kapcsolat";
+    v_conn_a.id="connect_nav";
 
     console.log(v_is_mobile);
 
@@ -103,4 +107,4 @@ function create_menu_line (){
 }
 
 
-create_menu_line();
+createMenuLine();
