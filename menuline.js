@@ -1,17 +1,21 @@
+/*fix értékek*/
+const c_mobilwidth = 1185;
+const c_weight = "700";
+
 /*aktuális oldal url-jét kiszedjük, ez alapján visszatérünk egy szövegkiemeléssel arra a linkre ahol épp vagyunk*/
 function findActualUrl(){
 
     let v_url = window.location.href; 
 
-    if (v_url.search("ceginformacio"))
+    if (v_url.search("ceginformacio") != -1)
     {
         r_html = "Céginformáció";
     }
-    else if (v_url.search("szolgaltatasok"))
+    else if (v_url.search("szolgaltatasok") != -1)
     {
         r_html = "Szolgáltatásaink";
     }
-    else if (v_url.search("kapcsolat"))
+    else if (v_url.search("kapcsolat") != -1)
     {
         r_html = "Kapcsolat";
     }
@@ -47,17 +51,19 @@ function createMenuLine (){
     v_html.appendChild(v_menu_div);
     document.getElementById('menu_line').classList.add("menu_line");
 
-    v_paragraph.id = "company"
-    v_menu_div.append(v_paragraph, v_nav);
+    //v_paragraph.id = "company"
+    //v_menu_div.append(v_paragraph, v_nav);
     
-    v_paragraph.textContent = "ACME Inc."
-    v_paragraph.appendChild(v_home_a)
-    
+    //v_paragraph.textContent = "ACME Inc.";
+    //v_paragraph.appendChild(v_home_a);
+
+    v_menu_div.append(v_home_a, v_nav);
     v_nav.id = "navig_id";
 
     v_home_a.setAttribute('href', "index.html");
     v_home_a.id="home";
-    document.getElementById("home").innerHTML = '<i class="fa fa-home"></i>';
+    //document.getElementById("home").innerHTML = '<i class="fa fa-home"></i>';
+    v_home_a.text = "ACME Inc.";
 
     setDarkLight("body");
     /*váltás miatt event listener így élőben csinálja :)*/
@@ -67,7 +73,7 @@ function createMenuLine (){
 
     window.addEventListener('resize', function(event) {
         let v_width = window.innerWidth;
-        if (v_width < 820){
+        if (v_width < c_mobilwidth){
             v_is_mobile = false;
         }
         else {
@@ -90,19 +96,20 @@ function createMenuLine (){
     v_conn_a.id="connect_nav";
 
     console.log(v_is_mobile);
+    console.log(v_searh_res);
 
     /*kiemeli azt ahol épp állunk*/
-    if(v_searh_res.search("Céginformáció")===0 && !v_is_mobile)
+    if(v_searh_res.search("Céginformáció") != -1 && !v_is_mobile)
     {
-        document.getElementById("compinfo_nav").style.fontWeight = "700"; 
+        document.getElementById("compinfo_nav").style.fontWeight = c_weight; 
     }
-    else if(v_searh_res.search("Szolgáltatásaink")===0)
+    else if(v_searh_res.search("Szolgáltatásaink") != -1)
     {
-        document.getElementById("support_nav").style.fontWeight = "700"; 
+        document.getElementById("support_nav").style.fontWeight = c_weight; 
     }
-    else if(v_searh_res.search("Kapcsolat")===0)
+    else if(v_searh_res.search("Kapcsolat") != -1)
     {
-        document.getElementById("connect_nav").style.fontWeight = "700"; 
+        document.getElementById("connect_nav").style.fontWeight = c_weight; 
     }
 }
 
