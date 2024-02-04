@@ -1,6 +1,8 @@
 /*fix értékek*/
 const c_mobilwidth = 1185;
 const c_weight = "700";
+const c_norm_weight = "100";
+
 
 /*aktuális oldal url-jét kiszedjük, ez alapján visszatérünk egy szövegkiemeléssel arra a linkre ahol épp vagyunk*/
 function findActualUrl(){
@@ -19,8 +21,6 @@ function findActualUrl(){
     {
         r_html = "Kapcsolat";
     }
-
-
     return r_html
 }
 
@@ -35,6 +35,28 @@ function setDarkLight (p_element)
     }   
 }
 
+function strongLink(p_res, p_is_mobile)
+{
+    console.log(p_is_mobile);
+    if(p_res.search("Céginformáció") != -1 && !p_is_mobile)
+    {
+        document.getElementById("compinfo_nav").style.fontWeight = c_weight; 
+    }
+    else if(p_res.search("Szolgáltatásaink") != -1 && !p_is_mobile)
+    {
+        document.getElementById("support_nav").style.fontWeight = c_weight; 
+    }
+    else if(p_res.search("Kapcsolat") != -1 && !p_is_mobile)
+    {
+        document.getElementById("connect_nav").style.fontWeight = c_weight; 
+    }
+    else{
+        document.getElementById("compinfo_nav").style.fontWeight = c_norm_weight; 
+        document.getElementById("support_nav").style.fontWeight = c_norm_weight; 
+        document.getElementById("connect_nav").style.fontWeight = c_norm_weight; 
+    }
+}
+
 function createMenuLine (){
     let v_html = document.querySelector("body");
     let v_menu_div = document.createElement("DIV");
@@ -45,7 +67,7 @@ function createMenuLine (){
     let v_conn_a = document.createElement('a');
     let v_home_a = document.createElement('a');
     let v_searh_res = findActualUrl();
-    let v_is_mobile = window.matchMedia('(max-width: 820px) and (min-width: 300px)').matches;
+    let v_is_mobile = window.matchMedia('(max-width: ' + c_mobilwidth + 'px) and (min-width: 300px)').matches;
 
     v_menu_div.id = "menu_line"
     v_html.appendChild(v_menu_div);
@@ -73,12 +95,14 @@ function createMenuLine (){
 
     window.addEventListener('resize', function(event) {
         let v_width = window.innerWidth;
-        if (v_width < c_mobilwidth){
-            v_is_mobile = false;
+
+        if (v_width <= c_mobilwidth){
+            v_is_mobile = true;
         }
         else {
             v_is_mobile = false;
         }
+        strongLink(v_searh_res, v_is_mobile);
     });
 
     v_nav.append(v_comp_a, v_serv_a, v_conn_a);
@@ -95,22 +119,8 @@ function createMenuLine (){
     v_conn_a.textContent = "Kapcsolat";
     v_conn_a.id="connect_nav";
 
-    console.log(v_is_mobile);
-    console.log(v_searh_res);
-
     /*kiemeli azt ahol épp állunk*/
-    if(v_searh_res.search("Céginformáció") != -1 && !v_is_mobile)
-    {
-        document.getElementById("compinfo_nav").style.fontWeight = c_weight; 
-    }
-    else if(v_searh_res.search("Szolgáltatásaink") != -1)
-    {
-        document.getElementById("support_nav").style.fontWeight = c_weight; 
-    }
-    else if(v_searh_res.search("Kapcsolat") != -1)
-    {
-        document.getElementById("connect_nav").style.fontWeight = c_weight; 
-    }
+    strongLink(v_searh_res, v_is_mobile)
 }
 
 

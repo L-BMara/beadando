@@ -16,6 +16,10 @@
     --v_100_font_size: 100px;
     --v_120_font_size: 120px;
     --v_60_line_height: 60px;
+    --v_140_line_height: 140px;
+
+    --v_60_line_height: 60px;
+
     --v_color_pink: #D166FF;
     --v_color_purple: #7000A0;
     --v_color_black: black;
@@ -32,9 +36,11 @@
     --v_l_padding: 71px 80px; 
     --v_padding_80: 80px;
     --v_xl_padding: 153px 0px;
-    --v_lxl_padding: 151px 577px;
+    --v_lxl_padding: 100px 577px;
     --v_s_padding: 8px 24px; 
-    --v_m_padding: 77px 65px;
+    --v_padding_0_32: 0px 32px;
+    --v_padding_32_0: 32px 0px;
+    --v_m_padding: 77px 58px;
     --v_lm_padding: 0px 80px 80px;
     --v_margin_0: 0px;
     --v_15_letter_sp: 15px;
@@ -54,6 +60,7 @@
     --v_gap_10: 10px;
     --v_gap_8: 8px;
     --v_gap_0: 0px;
+    --v_gap_64_50: 64px 50px;
     --v_italic_font_style: italic;
     --v_flex_shrink: 0;
     --v_stretch_align_s: stretch;
@@ -63,7 +70,6 @@
     --v_set_static: static;
     --v_position_absolut: absolute;
     --v_felx_direction: normal;
-    --v_0_32_padding: 0px 32px;
     --v_underline_text_decor: underline;
     --v_widht_100: 100%;
     --v_width_1: 1px;
@@ -72,13 +78,16 @@
     --v_width_376: 376px;
     --v_width_375: 375px;
     --v_width_379: 379px;
+    --v_max_width: 300px;
+    --v_width_400: 400px;
+    --v_width_500: 500px;
     --v_height_219: 219px;
     --v_height_471: 471px;
     --v_height_281: 281px;
     --v_border_bottom: 1px solid black;
     --v_white_shadow: 0px 0px 15px #FFF;    
-    --v_top_238: 238px;
-    --v_top_653: 653px;
+    --v_top_218: 218px;
+    --v_top_574: 574px;
     --v_top_150: 150px;
     --v_left_0: 0px;
     --v_left_525: 525px;
@@ -153,7 +162,7 @@ body{
 .menu_line{
     display: var(--v_flex_dis);
     align-items: var(--v_center_align_itm);
-    padding: var(--v_0_32_padding);
+    padding: var(--v_padding_0_32);
     justify-content: var(--v_space_btw_justify_cont);
     flex-shrink: var(--v_flex_shrink); 
     font-weight: var(--v_100_font_weight); 
@@ -198,7 +207,7 @@ body{
 
 .compinfo_title h1{
     position: var(--v_position_absolut);
-    top: var(--v_top_238);
+    top: var(--v_top_218);
     left: var(--v_left_525);
     color: var(--v_color_black);
     text-shadow: var(--v_white_shadow);
@@ -206,11 +215,12 @@ body{
     font-size: var(--v_120_font_size);
     font-weight: var(--v_400_font_weight);
     width: var(--v_width_727);
+    line-height: var(--v_140_line_height);
 }
 
 .nav_services{
     position: var(--v_position_absolut);
-    top: var(--v_top_653);
+    top: var(--v_top_574);
     left: var(--v_left_1175);
     color: var(--v_color_black);
     font-size: var(--v_24_font_size);
@@ -231,7 +241,6 @@ body{
 }
 
 .h2_sytle{
-    font-family: var(--v_font_family);
     font-size: var(--v_40_font_size);
     font-style: var(--v_italic_font_style);
     font-weight: var(--v_400_font_weight);
@@ -304,7 +313,6 @@ body{
 }
 
 .service_div{
-
     display: var(--v_flex_dis);
     justify-content: var(--v_space_btw_justify_cont);
     align-items: var(--v_f_start_align_itm);
@@ -312,7 +320,6 @@ body{
     row-gap: var(--v_gap_50);
     flex-wrap: var(--v_wrap_flex_wrap); 
     padding: var(--v_lm_padding);
-    fill: var(--v_color_white);
 }
 
 .service_content{
@@ -322,6 +329,70 @@ body{
     gap: var(--v_gap_32); 
     width: var(--v_width_379);
 }
+
+.title{
+    text-align: var(--v_center_align_itm);
+    font-size: var(--v_24_font_size);
+    font-weight: var(--v_700_font_weight);
+}
+
+.upper_side{
+    padding: 0px 80px 0px 80px;
+}
+
+.upper_resp{
+    padding: 0px 60px 0px 60px;
+}
+
+.content{
+    font-size: var(--v_24_font_size);
+    font-weight: var(--v_400_font_weight);
+}
+
+.connection_head{
+    align-items: var(--v_center_align_itm); 
+    text-align: var(--v_center_align_itm); 
+    padding: 50px 0px 0px 0px;
+}
+
+.connection{
+    display: var(--v_flex_dis);
+    justify-content: var(--v_space_btw_justify_cont);
+    align-items: var(--v_center_align_itm); 
+    padding: 0px 80px 0px 80px;
+}
+
+.connect_content{
+    font-size: var(--v_24_font_size);
+    font-style: var(--v_italic_font_style);
+    font-weight: var(--v_700_font_weight);
+}
+
+.zero_space_cont{
+    margin: 0;
+    padding: 0;
+}
+
+.connection_normal{
+    font-weight: var(--v_400_font_weight);
+    font-size: var(--v_24_font_size);  
+}
+
+.connection_con{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul > li{
+    font-weight: var(--v_400_font_weight);
+    font-size: var(--v_24_font_size);
+}
+
+.map{
+    padding: 0px 0px 0px 100px;
+}
+
 
 @media (prefers-color-scheme: dark) {
     body{
@@ -367,10 +438,6 @@ body{
     .compinfo_title h1{
         color: var(--v_color_white);
         text-shadow: var(--v_none);
-    }
-
-    .service_div{
-        fill: var(--v_color_black);
     }
 }
 
@@ -480,7 +547,7 @@ body{
     }
     
     .introduction{
-        padding: var(--v_0_32_padding);
+        padding: var(--v_padding_0_32);
         gap: var(--v_gap_32); 
     }
     
@@ -494,6 +561,33 @@ body{
         font-weight: var(--v_700_font_weight);
         letter-spacing: var(--v_50_letter_sp); 
         padding: var(--v_m_padding);
+        height: 200px;
+    }
+
+    .service{
+        display: none;
+    }
+
+    .service_div{
+        padding: var(--v_padding_0_32);
+        justify-content: var(--v_center_justify_cont);
+        row-gap: var(--v_gap_0);
+        gap: var(--v_gap_64_50);
+    }
+
+    .service_content{
+        padding: var(--v_padding_32_0);
+        min-width: var(--v_max_width);
+        gap: var(--v_gap_32); 
+    }
+
+
+    .upper_side{
+        padding: 0px 50px 0px 50px;
+    }
+    
+    .upper_resp{
+        padding: 0px 10px 0px 10px;
     }
 
 }
@@ -548,8 +642,24 @@ body{
 }
 
 
-@media screen and (min-width: 1450px) {
+@media screen and (max-width: 1760px) and (min-width: 1450px) {
     .nav_services{
         left: var(--v_left_83p);
     }
+
+    .service_content{
+        width: var(--v_width_400);
+    }
+    
+}
+
+@media screen and (min-width: 1761px) {
+    .nav_services{
+        left: var(--v_left_83p);
+    }
+
+    .service_content{
+        width: var(--v_width_500);
+    }
+    
 }

@@ -13,7 +13,7 @@ function setDarkLight ()
 
 function reSetFillColor(){
 
-    if (window.matchMedia('(prefers-color-scheme: dark)'))
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
     {
         document.querySelector("body").innerHTML=document.querySelector("body").innerHTML.replaceAll('fill="#121215"', 'fill="white"');
         document.querySelector("body").style.background="linear-gradient(117deg, #121215 0%, #262629 100%)";
