@@ -14,7 +14,7 @@ function replaceInc(p_ismobile){
     }
 }
 
-function reset_html (){
+function resetHtml (){
     let v_is_mobile = window.matchMedia('(max-width: ' + c_max_widt + 'px) and (min-width: 300px)').matches;
 
     window.addEventListener('resize', function(event) {
@@ -31,4 +31,4 @@ function reset_html (){
     replaceInc(v_is_mobile);
 }
 
-reset_html();
+resetHtml();
