@@ -34,7 +34,7 @@
     --v_f_end_align_itm: flex-end;
     --v_padding_32: 32px;
     --v_padding_32_total: 32px 32px 32px 32px;
-    --v_padding_footer: 75px 255px 75px 255px;
+    --v_padding_footer: 75px 255px 36px 255px;
     --v_padding_footer_mobile: 77px 56px 63px 56px;
     --v_xxl_padding: 412px 260px 393px 260px;
     --v_l_padding: 71px 80px; 
@@ -345,6 +345,7 @@ body, html{
     font-weight: var(--v_400_font_weight);
     letter-spacing: var(--v_200_letter_sp); 
     padding: var(--v_padding_footer);
+    margin: var(--v_0px);
 }
 
 .service{
