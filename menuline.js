@@ -2,7 +2,19 @@
 const c_mobilwidth = 1185;
 const c_weight = "700";
 const c_norm_weight = "100";
+const c_dark__color = "white";
+const c_light__color = "#12121";
 
+
+function setDarkLight (p_element)
+{
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector(p_element).style.color = c_dark__color;
+    }
+    else{
+        document.querySelector(p_element).style.color = c_light__color;
+    }   
+}
 
 /*aktuális oldal url-jét kiszedjük, ez alapján visszatérünk egy szövegkiemeléssel arra a linkre ahol épp vagyunk*/
 function findActualUrl(){
@@ -24,31 +36,23 @@ function findActualUrl(){
     return r_html
 }
 
-function setDarkLight (p_element)
-{
-    /*node ellenőrzés. Sajnos valamiért nem veszi fel a background colort css-ből csak js-ből sytle-al hívva :/ */
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector(p_element).style.background="linear-gradient(117deg, #121215 0%, #262629 100%)";
-    }
-    else{
-        document.querySelector(p_element).style.background="linear-gradient(117deg, #EEEEF0 0%, #CCCCD8 100%)";
-    }   
-}
-
 function strongLink(p_res, p_is_mobile)
 {
     console.log(p_is_mobile);
     if(p_res.search("Céginformáció") != -1 && !p_is_mobile)
     {
         document.getElementById("compinfo_nav").style.fontWeight = c_weight; 
+        setDarkLight("#compinfo_nav");
     }
     else if(p_res.search("Szolgáltatásaink") != -1 && !p_is_mobile)
     {
         document.getElementById("support_nav").style.fontWeight = c_weight; 
+        setDarkLight("#support_nav");
     }
     else if(p_res.search("Kapcsolat") != -1 && !p_is_mobile)
     {
         document.getElementById("connect_nav").style.fontWeight = c_weight; 
+        setDarkLight("#connect_nav");
     }
     else{
         document.getElementById("compinfo_nav").style.fontWeight = c_norm_weight; 
@@ -60,7 +64,7 @@ function strongLink(p_res, p_is_mobile)
 function createMenuLine (){
     let v_html = document.querySelector("body");
     let v_menu_div = document.createElement("DIV");
-    let v_paragraph = document.createElement("p");
+    //let v_paragraph = document.createElement("p");
     let v_nav = document.createElement("NAV");
     let v_comp_a = document.createElement('a');
     let v_serv_a = document.createElement('a');

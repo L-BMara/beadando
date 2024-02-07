@@ -21,8 +21,9 @@
     --v_60_line_height: 60px;
     --v_color_pink: #D166FF;
     --v_color_purple: #7000A0;
-    --v_color_black: black;
+    --v_color_black: #121215;
     --v_color_white: white;
+    --v_color_greyis: rgba(255, 255, 255, 0.75); 
     --v_color_grey: #888;
     --v_flex_dis: flex;
     --v_inline_dis: inline-block;
@@ -32,30 +33,37 @@
     --v_center_align_itm: center;
     --v_f_end_align_itm: flex-end;
     --v_padding_32: 32px;
-    --v_xxl_padding: 412px 269px 393px 269px;
+    --v_padding_32_total: 32px 32px 32px 32px;
+    --v_padding_footer: 75px 255px 75px 255px;
+    --v_padding_footer_mobile: 77px 56px 63px 56px;
+    --v_xxl_padding: 412px 260px 393px 260px;
     --v_l_padding: 71px 80px; 
     --v_padding_80: 80px;
     --v_xl_padding: 153px 0px;
-    --v_lxl_padding: 100px 577px;
-    --v_s_padding: 8px 24px; 
+    --v_lxl_padding: 50px 577px;
+    --v_s_padding: 8px 24px 8px 24px; 
+    --v_xxs_margin: 0px 0px 8px 0px; 
     --v_padding_l_lef_right: 0px 80px 0px 80px;
-    --v_padding_l_lef: 0px 285px 0px 0px;
+    --v_padding_l_lef: 0px 237px 0px 0px;
     --v_padding_m_left_right: 0px 60px 0px 60px;
     --v_padding_s_left_right: 0px 50px 0px 50px;
     --v_padding_xxs_left_right: 0px 10px 0px 10px;
     --v_padding_l_top_left_right: 0px 80px 80px 80px;
     --v_padding_s_total: 13px 106px 13px 65px;
+    --v_padding_sm_total: 50px 80px 50px 80px;
     --v_padding_top_m: 50px 0px 0px 0px;
     --v_padding_0_32: 0px 32px;
     --v_padding_32_0: 32px 0px;
+    --v_padding_32_0_0: 32px 0px 0px 0px;
+    --v_padding_32_under: 0px 0px 32px 0px;
     --v_padding_xxs: 13px 106px;
+    --v_padding_20_30: 20px 30px 20px 30px;
     --v_padding_xs_down: 0px 0px 26px 0px;
     --v_m_padding: 77px 58px;
     --v_lm_padding: 0px 80px 80px;
     --v_l_padding_right: 0px 0px 0px 100px;
-    --v_margin_0: 0px;
+    --v_0px: 0px;
     --v_xxl_right_margin: 50px 0px 10px 1066px;
-    --v_l_left_margin: 0px 65px 0px 0px;
     --v_xl_left_margin: 0px 0px 0px 140px;
     --v_15_letter_sp: 15px;
     --v_10_letter_sp: 10px;
@@ -95,7 +103,7 @@
     --v_width_376: 376px;
     --v_width_375: 375px;
     --v_width_379: 379px;
-    --v_max_width: 300px;
+    --v_width_300: 300px;
     --v_width_400: 400px;
     --v_width_500: 500px;
     --v_width_200: 200px;
@@ -109,6 +117,8 @@
     --v_height_503: 503px;
     --v_height_400: 400px;
     --v_height_650: 650px;
+    --v_height_291: 291px;
+    --v_height_200: 200px;
     --v_border_bottom: 1px solid black;
     --v_border_pink_bottom: 4px solid #A0009B;
     --v_white_shadow: 0px 0px 15px #FFF;    
@@ -124,7 +134,7 @@
     --v_left_83p: 83%;
     --v_left_10: 10px;
     --v_fromus_bg_color: black;
-    --v_fromus_color: white;
+    --v_fromus_color: #EEEEF0;
     --v_none: none;
     --v_wrap_flex_wrap: wrap;
     
@@ -134,11 +144,11 @@
     --v_dark_fromus_color: black;
 }
 
-body{
+body, html{
     background: var(--v_background);
     color: var(--v_color_black);
     overflow-x: hidden;
-    margin: var(--v_margin_0);
+    margin: var(--v_0px);
 }
 
 .roboto_font{
@@ -160,6 +170,8 @@ body{
     font-size: var(--v_64_font_size);
     letter-spacing: var(--v_15_letter_sp);
     font-weight: var(--v_900_font_weight);  
+    padding: var(--v_0px);
+    margin: var(--v_0px);
 }
 
 .line{
@@ -226,7 +238,6 @@ body{
 
 .compinfo_title img{
     width: var(--v_width_628);
-    
 }
 
 .compinfo_title h1{
@@ -292,7 +303,7 @@ body{
 }
 
 .opinion{
-    color: var(--v_color_white);
+    color: var(--v_fromus_color);
     font-size: var(--v_30_font_size);
     font-style: var(--v_italic_font_style);
     font-weight: var(--v_400_font_weight);
@@ -315,11 +326,15 @@ body{
     font-weight: var(--v_400_font_weight); 
 }
 
+.all_opinion{
+    padding: var(--v_0px);
+    margin: var(--v_0px);
+}
+
 .company_footer{
     background: var(--v_purple_bg);
-    position: var(--v_position_absolut);
-    left: var(--v_left_0);
     width: var(--v_widht_100);
+    height: var(--v_height_291);
 }
 
 .company_footer p{
@@ -329,11 +344,13 @@ body{
     font-size: var(--v_120_font_size);
     font-weight: var(--v_400_font_weight);
     letter-spacing: var(--v_200_letter_sp); 
+    padding: var(--v_padding_footer);
 }
 
 .service{
     align-items: var(--v_center_align_itm); 
     padding: var(--v_lxl_padding);
+    text-align: var(--v_center_align_itm); 
 }
 
 .service_div{
@@ -344,6 +361,7 @@ body{
     row-gap: var(--v_gap_50);
     flex-wrap: var(--v_wrap_flex_wrap); 
     padding: var(--v_lm_padding);
+    color: var(--v_color_black);
 }
 
 .service_content{
@@ -352,6 +370,11 @@ body{
     align-items: var(--v_center_align_itm);
     gap: var(--v_gap_32); 
     width: var(--v_width_379);
+}
+
+.service_content p{
+    padding: var(--v_0px);
+    margin: var(--v_0px);
 }
 
 .title{
@@ -377,6 +400,7 @@ body{
     align-items: var(--v_center_align_itm); 
     text-align: var(--v_center_align_itm); 
     padding: var(--v_padding_top_m);
+    color: var(--v_color_black); 
 }
 
 .connection{
@@ -384,19 +408,20 @@ body{
     justify-content: var(--v_space_btw_justify_cont);
     align-items: var(--v_center_align_itm); 
     padding: var(--v_padding_l_top_left_right);
+    color: var(--v_color_black); 
 }
 
 .connect_content{
     font-size: var(--v_24_font_size);
     font-style: var(--v_italic_font_style);
     font-weight: var(--v_700_font_weight);
-    margin: var(--v_margin_0);
-    padding: var(--v_margin_0);
+    margin: var(--v_0px);
+    padding: var(--v_0px);
 }
 
 .zero_space_cont p{
-    margin: var(--v_margin_0);
-    padding: var(--v_margin_0);
+    margin: var(--v_0px);
+    
 }
 
 .connection_normal{
@@ -406,8 +431,8 @@ body{
 
 .connection_con{
     list-style-type: var(--v_none);
-    margin: var(--v_margin_0);
-    padding: var(--v_margin_0);
+    margin: var(--v_0px);
+    padding: var(--v_0px);
 }
 
 ul > li{
@@ -421,7 +446,7 @@ ul > li{
 
 .form_div{
     background: var(--v_color_black);
-    padding: 50px 80px 50px 80px;
+    padding: var(--v_padding_sm_total);
     height: var(--v_height_503); 
 }
 
@@ -499,10 +524,16 @@ ul > li{
         color: var(--v_color_white);
     }
 
-    .menu_line nav a{
-        color: var(--v_color_white);
+    @media screen and (max-width: 1185px) and (min-width: 370px){
+        .menu_line nav a{
+            color: white;
+        }
     }
-
+    @media screen and (min-width: 1185px) {
+        .menu_line nav a{
+            color: var(--v_color_greyis);
+        }
+    }
     .fromus{
         background-color: var(--v_color_white);
     }
@@ -512,6 +543,10 @@ ul > li{
     }
     .opinion{
         color: var(--v_dark_fromus_color);
+    }
+
+    .author{
+        color: var(--v_color_purple);
     }
 
     .nav_services{
@@ -534,6 +569,17 @@ ul > li{
     .submit{
         color: var(--v_color_white);
     }
+
+    .connection_head{
+        color: var(--v_color_white); 
+    }
+
+    .connection{
+        color: var(--v_color_white); 
+    }
+    .service_div{
+        color: var(--v_color_white);
+    }    
 }
 
 
@@ -545,7 +591,7 @@ ul > li{
         flex-direction: var(--v_column_direction);
     }
 
-    h1{
+    .def_div_class h1{
         font-size: var(--v_48_font_size);
         letter-spacing: var(--v_10_letter_sp);
         text-align: var(--v_center_align_itm);
@@ -562,12 +608,16 @@ ul > li{
     }
 
     .menu a{
-        font-size: var(--v_48_font_size);
+        font-size: var(--v_40_font_size);
     }
 
     .menu_line{
         --padding: var(--v_s_padding);
         --justify-content: var(--v_space_btw_justify_cont);
+    }
+
+    #connect_nav{
+        margin: var(--v_xxs_margin);
     }
 
     .menu_line p{
@@ -585,7 +635,7 @@ ul > li{
         font-size: var(--v_24_font_size);
         font-weight: var(--v_100_font_weight);
     }
-        
+
     .compinfo_title{
         padding: 0px 0px;
         background-color: var(--v_color_black);
@@ -638,15 +688,25 @@ ul > li{
     .author{
         color: var(--v_color_purple);
         justify-content: var(--v_f_end_align_itm); 
+        padding: var(--v_0px);
+        margin: var(--v_0px);
     }
     
     .introduction{
         padding: var(--v_padding_0_32);
         gap: var(--v_gap_32); 
     }
+
+    .introduction h2{
+        padding: var(--v_padding_32_0_0);
+    }
     
     .introduction p{
         font-size: var(--v_18_font_size);
+    }
+    
+    .company_footer{
+        height: var(--v_height_200);
     }
     
     .company_footer p{
@@ -654,8 +714,8 @@ ul > li{
         font-size: var(--v_40_font_size);
         font-weight: var(--v_700_font_weight);
         letter-spacing: var(--v_50_letter_sp); 
-        padding: var(--v_m_padding);
-        height: 200px;
+        padding: var(--v_padding_footer_mobile);
+        margin: var(--v_0px);
     }
 
     .service{
@@ -671,10 +731,9 @@ ul > li{
 
     .service_content{
         padding: var(--v_padding_32_0);
-        min-width: var(--v_max_width);
+        min-width: var(--v_width_300);
         gap: var(--v_gap_32); 
     }
-
 
     .upper_side{
         padding: var(--v_padding_s_left_right);
@@ -694,13 +753,13 @@ ul > li{
 
     .map{
         align-self: var(--v_stretch_align_s); 
-        padding: var(--v_margin_0);
+        padding: var(--v_padding_32_under);
     }
 
     .form_div{
         display: var(--v_flex_dis);
         width: var(--v_width_100);
-        padding: var(--v_padding_32);
+        padding: var(--v_padding_32_total);
         flex-direction: var(--v_column_direction);
         gap: var(--v_gap_32); 
         height: var(--v_height_650);
@@ -723,9 +782,13 @@ ul > li{
         width: var(--v_set_auto);
     }
 
+    .form_input{
+        width: var(--v_width_300);
+    }
+
     .from_message{
         width: var(--v_widht_100);
-        min-width: var(--v_width_360);
+        min-width: var(--v_width_300);
     }
 
     .message_label{
@@ -748,7 +811,7 @@ ul > li{
         align-items: var(--v_center_align_itm);
         gap: var(--v_gap_10); 
         padding: var(--v_padding_s_total);
-        margin: var(--v_l_left_margin); 
+        margin: var(--v_0px); 
     }
 }
 
@@ -806,7 +869,7 @@ ul > li{
     }
 
     .form_div{
-        padding: 20px 30px 20px 30px;
+        padding: var(--v_padding_20_30);
     }
 
     .submit_div{
