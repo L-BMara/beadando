@@ -352,6 +352,7 @@ body, html{
     align-items: var(--v_center_align_itm); 
     padding: var(--v_lxl_padding);
     text-align: var(--v_center_align_itm); 
+    color: var(--v_color_black);
 }
 
 .service_div{
@@ -581,7 +582,12 @@ ul > li{
     .service_div{
         color: var(--v_color_white);
     }    
+
+    .service{
+        color: var(--v_color_white);
+    }
 }
+
 
 
 @media screen and (max-width: 1185px) and (min-width: 370px) {
