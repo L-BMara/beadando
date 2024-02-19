@@ -38,7 +38,6 @@
     --v_background: var(--v_light_background);
     --v_font_color: var(--v_color_black);
     --v_author_color: var(--v_color_pink);
-    --v_company_color: var(--v_color_white);
     --v_form_color: var(--v_color_white);
     --v_line_background: var(--v_color_black);
     --v_line_after: var(--v_color_black);
@@ -70,7 +69,7 @@
     --v_compinfo_line_height: 140px;
     --v_introduction_p: var(--v_font_size_m);
     --v_company_footer_height: 291px;
-    --v_company_footer_p_color: var(--v_company_color);
+    --v_company_footer_p_color: var(--v_color_white);
     --v_company_footer_p_f_size: 120px;
     --v_company_footer_p_f_weight: var(--v_font_weight_m);
     --v_company_footer_p_letter_sp: 200px;
